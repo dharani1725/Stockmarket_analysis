@@ -91,3 +91,52 @@ button{
 
     cursor:pointer;
 }
+.stock-card {
+    background: #1b1d6b;
+    border: 1px solid #3b3fb3;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.stock-card:hover {
+    background: #2a2d8f;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+.stock-card h2 {
+    color: white;
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.stock-card p {
+    color: #d9d9d9;
+    font-size: 15px;
+    margin: 6px 0;
+}
+
+.list-section {
+    height: 550px;
+    overflow-y: auto;
+}
+
+.list-section::-webkit-scrollbar {
+    width: 8px;
+}
+
+.list-section::-webkit-scrollbar-thumb {
+    background: #4a4fd0;
+    border-radius: 10px;
+}
+
+.list-section::-webkit-scrollbar-track {
+    background: transparent;
+}
+.stock-card.active{
+    border:2px solid #00ff7f;
+    background:#2b2fa8;
+}
