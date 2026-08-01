@@ -39,7 +39,7 @@ h1{
     border-radius:10px;
 }
 
-.list-section{
+#list-section{
 
     flex:1;
 
@@ -119,24 +119,29 @@ button{
     margin: 6px 0;
 }
 
-.list-section {
+#list-section {
     height: 550px;
     overflow-y: auto;
 }
 
-.list-section::-webkit-scrollbar {
+#list-section::-webkit-scrollbar {
     width: 8px;
 }
 
-.list-section::-webkit-scrollbar-thumb {
+#list-section::-webkit-scrollbar-thumb {
     background: #4a4fd0;
     border-radius: 10px;
 }
 
-.list-section::-webkit-scrollbar-track {
+#list-section::-webkit-scrollbar-track {
     background: transparent;
 }
 .stock-card.active{
     border:2px solid #00ff7f;
     background:#2b2fa8;
+}
+#chart{
+
+    margin-bottom:20px;
+
 }
