@@ -7,11 +7,14 @@ const DETAILS_API = "https://stock-market-api-k9vl.onrender.com/api/profiledata"
 const listsection = document.getElementById("list-section");
 const chartCanvas = document.querySelector("#chart");
 const btn = document.querySelector("#buttons");
+const details = document.querySelector(".details-section");
+
 
 //Initializing variables to store the current required information
 let currentstock = "";
 let currentduration = "3mo";
 let chartInstance = null;
+let name = null;
 
 // Adding event listeners to the buttons to load the chart with the selected duration
 for (let button of btn.children) {
@@ -39,6 +42,7 @@ async function fetchStocks() {
       card.addEventListener("click", () => {
         currentstock = stock;
         loadChart(stock, currentduration);
+        stockdetails(currentstock);
       });
       const name = document.createElement("h2");
       name.textContent = stock;
@@ -107,16 +111,24 @@ async function loadChart(stockname, duration) {
   }
 }
 
-//fetchStocks();
-
 async function stockdetails(stockname) {
   try {
     const response = await fetch(DETAILS_API);
     const data = await response.json();
     const stockData = data.stocksProfileData[0][stockname]["summary"];
-    console.log(stockData);
+
+    if(name){
+      name.remove();
+    }
+
+    name = document.createElement("p");
+    name.textContent = stockData;
+    details.appendChild(name);
   } catch (error) {
     console.log(error);
   }
 }
+
+fetchStocks();
+loadChart("AAPL", "3mo");
 stockdetails("AAPL");
